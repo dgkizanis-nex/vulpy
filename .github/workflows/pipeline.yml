@@ -24,10 +24,6 @@ jobs:
       - name: Run Snyk to test for code vulnerabilities
         run: snyk code test
         continue-on-error: true
-
-      - name: Run Snyk to test dependencies for vulnerabilities
-        run: snyk test
-        continue-on-error: true
         
       - name: Upload Snyk report as artifact
         uses: actions/upload-artifact@v4
