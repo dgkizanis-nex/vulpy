@@ -23,10 +23,7 @@ jobs:
 
       - name: Run Snyk to test for code vulnerabilities
         run: snyk code test --report snyk-report.json
-        continue-on-error: true
-        
-      - name: Upload Snyk report as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: snyk-report
-          path: snyk-report.json
+        #continue-on-error: true
+
+      - name: Test if our pipeline failes
+        run: echo "Hello World!"
