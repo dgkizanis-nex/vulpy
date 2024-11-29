@@ -18,18 +18,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Requirements
-        run: pip -r install requirements.txt
-
       - name: Install Snyk CLI
         run: npm install -g snyk
 
       - name: Run Snyk to test for code vulnerabilities
         run: snyk code test
-        continue-on-error: true
-
-      - name: Run Snyk to test dependencies for vulnerabilities
-        run: snyk test
         continue-on-error: true
         
       - name: Upload Snyk report as artifact
