@@ -23,7 +23,7 @@ jobs:
 
       - name: Run Snyk to test for code vulnerabilities
         run: snyk code test
-        continue-on-error: true
+        #continue-on-error: true
 
       - name: Test if our pipeline fails
         run: echo "Hello World!"
